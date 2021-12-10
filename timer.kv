@@ -1,0 +1,85 @@
+MDBoxLayout:
+    orientation: "vertical"
+    MDToolbar:
+        title: "Minimal Pomodoro Timer"
+    MDBoxLayout:
+        orientation: "horizontal"
+        MDBoxLayout:
+            orientation: "vertical"
+            MDLabel:
+                text: "Work"
+                halign: "center"
+                font_size: "60dp"
+
+            MDLabel:
+                halign: "center"
+                text: app.running_time
+                font_size: "90dp"
+                id: run_label
+        MDBoxLayout:
+            orientation: "vertical"
+            MDLabel:
+                halign: "center"
+                font_size: "60dp"
+                text: "Pause"
+            MDLabel:
+                font_size: "90dp"
+                halign: "center"
+                text: app.pause_time
+                id: pause_label
+        
+    AnchorLayout:
+        anchor_x: "center"
+        padding: 40, 40
+        MDGridLayout:
+            cols: 6
+            spacing: 0.05*root.width, 10
+            padding: 0.1*root.width, 10
+            MDRoundFlatButton:
+                text: "Start"
+                font_size: "70dp"
+                size_hint_x: None
+                on_release: app.start()
+                
+            MDRoundFlatButton:
+                text: "Stop"
+                font_size: "70dp"
+                on_release: app.stop()
+            MDRoundFlatButton:
+                text: "Reset"
+                font_size: "70dp"
+                on_release: app.reset()
+    
+    MDBoxLayout:
+        
+        MDLabel:
+            padding: 100, 100
+            text: "Working Time"
+            font_size: "30dp"
+        MDSlider:
+            min: 1
+            max: 120
+            step: 1
+            hint: False
+            value: 45
+            id: work_spinner
+            on_value: app.set_running_time(self.value)
+
+    MDBoxLayout:
+        MDLabel:
+            padding: 100, 100
+            font_size: "30dp"
+            text: "Pause"
+        MDSlider:
+            min: 1
+            max: 40
+            value: 5
+            hint: False
+            step: 1
+            id: pause_spinner
+            on_value: app.set_pause_time(self.value)
+
+
+
+    
+
