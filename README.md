@@ -34,7 +34,7 @@ I have often had the need to improve my productivity, and despite because of the
 
 The main purpose of the project is to create a simple and customisable timer.
 
-
+![alt text](images/screen.png?raw=true)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -70,7 +70,7 @@ Those instruction are for a Ubuntu machine, anyway if you have another system yo
   ```
 * git
 ```sh
-sudo apt install git
+  sudo apt install git
 ```
 ### Installation
 
